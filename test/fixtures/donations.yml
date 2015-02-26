@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  amount: 9.99
+  charity: MyString
+  date: 2015-02-21 15:57:17
+
+two:
+  amount: 9.99
+  charity: MyString
+  date: 2015-02-21 15:57:17
