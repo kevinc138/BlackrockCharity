@@ -19,8 +19,11 @@
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li><a href="https://rocky-badlands-5623.herokuapp.com/charities"> Charities</a></li>
-              <li><a href="https://rocky-badlands-5623.herokuapp.com/donations"> Donations</a></li>
+              <% if current_user.try(:admin?) %>
+                <li><a href="https://rocky-badlands-5623.herokuapp.com/charities"> Charities</a></li>
+                <li><a "https://rocky-badlands-5623.herokuapp.com/donations"> Donations</a></li>
+              <% end %>
+              <li><a "https://rocky-badlands-5623.herokuapp.com/rapidfire"> Polls</a></li>
               
               
             </ul>
@@ -32,13 +35,13 @@
 			        Account <b class="caret"></b>
 			      </a>
 			      <ul class="dropdown-menu">
-			        <li><%= link_to "Profile", edit_user_registration_path %></li>
-			        <li><%= link_to "Settings", '#' %></li>
-			        <li class="divider"></li>
-			        <li>
-			          <%= link_to "Logout", destroy_user_session_path, :method => :delete %>
-			        </li>
-			      </ul>
+              <li><%= link_to "Profile", "https://rocky-badlands-5623.herokuapp.com/users/edit" %></li>
+              
+              <li class="divider"></li>
+              <li>
+                <%= link_to "Logout", "https://rocky-badlands-5623.herokuapp.com/users/sign_out", :method => :delete %>
+              </li>
+            </ul>
 			    </li>
 			  <% else %>
 			    <li><%= link_to "Sign in", new_user_session_path %></li>

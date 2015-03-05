@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :charities
   resources :donations
   root 'charities#index'
+  mount Rapidfire::Engine => "/rapidfire"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
