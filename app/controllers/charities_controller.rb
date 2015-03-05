@@ -25,7 +25,7 @@ class CharitiesController < ApplicationController
   # POST /charities.json
   def create
     @charity = Charity.new(charity_params)
-
+    @charity.total = 0;
     respond_to do |format|
       if @charity.save
         format.html { redirect_to @charity, notice: 'Charity was successfully created.' }
