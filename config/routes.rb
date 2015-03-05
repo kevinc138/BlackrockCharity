@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :admins
   devise_for :users
   get 'compare/view'
-
+  get 'compare/comparison'
   get 'history/view'
 
   resources :charities
