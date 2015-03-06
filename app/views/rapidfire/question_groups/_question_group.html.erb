@@ -1,7 +1,7 @@
 <tr id= "question_group_<%= question_group.id %>">
   <td>
     <% if can_administer? %>
-      <%= link_to question_group.name, question_group_questions_path(question_group) %>
+      <%= link_to question_group.name, question_group_questions_path(question_group), :class => "btn btn-default btn-sm" %>
     <% else %>
       <%= question_group.name %>
     <% end %>

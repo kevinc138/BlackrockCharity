@@ -8,33 +8,42 @@
       <% end %>
     </ul>
   <% end %>
-
+<div class="form-group">
   <%= f.label :type %>
-  <%= f.select :type, ::Rapidfire::QuestionForm::QUESTION_TYPES, {}, id: "question_type" %>
+  <%= f.select :type, ::Rapidfire::QuestionForm::QUESTION_TYPES, {}, id: "question_type", :class => "form-control" %>
+</div>
 
+<div class="form-group">
   <%= f.label :question_text %>
-  <%= f.text_field :question_text %>
+  <%= f.text_field :question_text, :class => "form-control" %>
+</div>
 
+<div class="form-group">
   <%= f.label :answer_options %>
-  <%= f.text_area :answer_options, rows: 5 %>
-
+  <%= f.text_area :answer_options, rows: 5, :class => "form-control" %>
+</div>
   <h4>Other options</h4>
   <hr/>
-
+<div class="form-group">
   <%= f.label :answer_presence %>
   <%= f.check_box :answer_presence %>
-
+</div>
+<div class="form-group">
   <%= f.label :answer_minimum_length %>
-  <%= f.text_field :answer_minimum_length %>
-
+  <%= f.text_field :answer_minimum_length, :class => "form-control" %>
+</div>
+<div class="form-group">
   <%= f.label :answer_maximum_length %>
-  <%= f.text_field :answer_maximum_length %>
-
+  <%= f.text_field :answer_maximum_length, :class => "form-control" %>
+</div>
+<div class="form-group">
   <%= f.label :answer_greater_than_or_equal_to %>
-  <%= f.text_field :answer_greater_than_or_equal_to %>
-
+  <%= f.text_field :answer_greater_than_or_equal_to, :class => "form-control" %>
+</div>
+<div class="form-group">
   <%= f.label :answer_less_than_or_equal_to %>
-  <%= f.text_field :answer_less_than_or_equal_to %>
+  <%= f.text_field :answer_less_than_or_equal_to, :class => "form-control" %>
+</div>
 
-  <%= f.submit submit_text %>
+  <%= f.submit submit_text, :class => "btn btn-default btn-sm" %>
 <% end %>
