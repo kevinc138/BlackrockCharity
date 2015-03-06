@@ -1,14 +1,15 @@
 
 <p id="notice"><%= notice %></p>
 <% if current_user.try(:admin?) %>
-<h1>Listing Donations</h1>
+<div class="center-block">
+<h1>All Donations</h1>
+</div>
 
 <table class="table table-hover">
   <thead>
     <tr>
       <th>Amount</th>
       <th>Charity</th>
-      <th>Date</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,10 +19,9 @@
       <tr>
         <td><%= donation.amount %></td>
         <td><%= donation.charity %></td>
-        <td><%= donation.date %></td>
-        <td><%= link_to 'View Details', donation %></td>
-        <td><%= link_to 'Edit Details', edit_donation_path(donation) %></td>
-        <td><%= link_to 'Delete', donation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= button_to 'View Details', donation %></td>
+        <td><%= button_to 'Edit Details', edit_donation_path(donation) %></td>
+        <td><%= button_to 'Delete', donation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -29,5 +29,5 @@
 
 <br>
 
-<%= link_to 'Add New Donation', new_donation_path %>
+<%= button_to 'Add New Donation', new_donation_path %>
 <% end %>

@@ -2,19 +2,13 @@
 
   <p id="notice"><%= notice %></p>
   <% if current_user.try(:admin?) %>
-  <h1>Listing Charities</h1>
+  <h1>All Charities</h1>
 
   <table class = "table table-hover">
     <thead>
       <tr>
         <th>Name</th>
         <th>Description</th>
-        <th>Address</th>
-        <th>Website</th>
-        <th>Email</th>
-        <th>Poc</th>
-        <th>Phone</th>
-        <th>Tax code</th>
         <th>Total</th>
         <th colspan="3"></th>
       </tr>
@@ -25,16 +19,10 @@
         <tr>
           <td><%= charity.name %></td>
           <td><%= charity.description %></td>
-          <td><%= charity.address %></td>
-          <td><%= charity.website %></td>
-          <td><%= charity.email %></td>
-          <td><%= charity.POC %></td>
-          <td><%= charity.phone %></td>
-          <td><%= charity.tax_code %></td>
           <td><%= charity.total %></td>
-          <td><%= link_to 'View Details', charity %></td>
-          <td><%= link_to 'Edit Details', edit_charity_path(charity) %></td>
-          <td><%= link_to 'Delete', charity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= button_to 'View Details', charity %></td>
+          <td><%= button_to 'Edit Details', edit_charity_path(charity) %></td>
+          <td><%= button_to 'Delete', charity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     </tbody>
@@ -42,6 +30,6 @@
 
   <br>
 
-  <%= link_to 'Add New Charity', new_charity_path %>
+  <%= button_to 'Add New Charity', new_charity_path %>
   <% end %>
 </body>
