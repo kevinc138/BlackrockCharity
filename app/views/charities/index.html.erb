@@ -20,9 +20,9 @@
           <td><%= charity.name %></td>
           <td><%= charity.description %></td>
           <td><%= charity.total %></td>
-          <td><%= button_to 'View Details', charity %></td>
-          <td><%= button_to 'Edit Details', edit_charity_path(charity) %></td>
-          <td><%= button_to 'Delete', charity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'View Details', charity, :class => "btn btn-default btn-sm" %></td>
+          <td><%= link_to 'Edit Details', edit_charity_path(charity), :class => "btn btn-default btn-sm" %></td>
+          <td><%= link_to 'Delete', charity, :class => "btn btn-default btn-sm", method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     </tbody>
@@ -30,6 +30,6 @@
 
   <br>
 
-  <%= button_to 'Add New Charity', new_charity_path %>
+  <%= link_to 'Add New Charity', new_charity_path, :class => "btn btn-default btn-sm" %>
   <% end %>
 </body>

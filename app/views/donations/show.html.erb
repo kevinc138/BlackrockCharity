@@ -16,5 +16,5 @@
   <%= @donation.date %>
 </p>
 
-<%= button_to 'Edit Donation Details', edit_donation_path(@donation) %> |
-<%= button_to 'Back', donations_path %>
+<%= link_to 'Edit Donation Details', edit_donation_path(@donation), :class => "btn btn-default btn-sm" %> |
+<%= link_to 'Back', donations_path, :class => "btn btn-default btn-sm" %>

@@ -66,13 +66,13 @@
       <tr>
         <td><%= donation.amount %></td>
         <td><%= donation.date %></td>
-        <td><%= button_to 'View Details', donation %></td>
-        <td><%= button_to 'Edit Details', edit_donation_path(donation) %></td>
-        <td><%= button_to 'Delete', donation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'View Details', donation, :class => "btn btn-default btn-sm" %></td>
+        <td><%= link_to 'Edit Details', edit_donation_path(donation), :class => "btn btn-default btn-sm" %></td>
+        <td><%= link_to 'Delete', donation, :class => "btn btn-default btn-sm", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to 'Edit Charity Details', edit_charity_path(@charity) %> |
-<%= link_to 'Back', charities_path %>
+<%= link_to 'Edit Charity Details', edit_charity_path(@charity), :class => "btn btn-default btn-sm" %> |
+<%= link_to 'Back', charities_path, :class => "btn btn-default btn-sm" %>
