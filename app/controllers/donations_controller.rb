@@ -43,11 +43,17 @@ class DonationsController < ApplicationController
   # PATCH/PUT /donations/1
   # PATCH/PUT /donations/1.json
   def update
+  	@charity = Charity.find_by(name:@donation.charity)
+  	@charity.total -= @donation.amount
     respond_to do |format|
       if @donation.update(donation_params)
+	    @charity.total += @donation.amount
+	    @charity.save
         format.html { redirect_to @donation, notice: 'Donation was successfully updated.' }
         format.json { render :show, status: :ok, location: @donation }
       else
+      	@charity.total += @donation.amount
+	    @charity.save
         format.html { render :edit }
         format.json { render json: @donation.errors, status: :unprocessable_entity }
       end
@@ -57,6 +63,9 @@ class DonationsController < ApplicationController
   # DELETE /donations/1
   # DELETE /donations/1.json
   def destroy
+  	@charity = Charity.find_by(name:@donation.charity)
+	@charity.total -= @donation.amount
+	@charity.save
     @donation.destroy
     respond_to do |format|
       format.html { redirect_to donations_url, notice: 'Donation was successfully destroyed.' }
