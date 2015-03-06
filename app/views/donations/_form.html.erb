@@ -13,7 +13,7 @@
 
   <div class="form-group">
     <%= f.label :amount %><br>
-    <%= f.text_field :amount, :class => "form-control" %>
+    <%= f.text_field :amount, :required => true, :class => "form-control" %>
   </div>
   <div class="form-group">
     <%= f.label :charity %><br>
@@ -21,7 +21,7 @@
   </div>
   <div class="form-group">
     <%= f.label :date %><br>
-    <%= f.datetime_select :date %>
+    <%= f.datetime_select :date, :required => true %>
   </div>
   <div class="actions">
     <%= f.submit "Submit", :class => "btn btn-default btn-sm" %>
