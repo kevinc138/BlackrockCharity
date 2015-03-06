@@ -4,8 +4,12 @@
 <%= form_for([@question_group, @answer_group_builder]) do |f| %>
   <%- @answer_group_builder.answers.each do |answer| %>
     <%= f.fields_for("#{answer.question.id}", answer) do |answer_form| %>
+    	<div class="form-group">
       <%= render_answer_form_helper(answer, answer_form) %>
+      </div>
     <% end %>
   <% end %>
+  <div class="form-group">
   <%= f.submit "Save", :class => "btn btn-default btn-sm" %>
+  </div>
 <% end %>
