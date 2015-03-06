@@ -19,9 +19,9 @@
         <td><%= donation.amount %></td>
         <td><%= donation.charity %></td>
         <td><%= donation.date %></td>
-        <td><%= link_to 'Show', donation %></td>
-        <td><%= link_to 'Edit', edit_donation_path(donation) %></td>
-        <td><%= link_to 'Destroy', donation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'View Details', donation %></td>
+        <td><%= link_to 'Edit Details', edit_donation_path(donation) %></td>
+        <td><%= link_to 'Delete', donation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -29,5 +29,5 @@
 
 <br>
 
-<%= link_to 'New Donation', new_donation_path %>
+<%= link_to 'Add New Donation', new_donation_path %>
 <% end %>

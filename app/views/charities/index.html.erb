@@ -32,9 +32,9 @@
           <td><%= charity.phone %></td>
           <td><%= charity.tax_code %></td>
           <td><%= charity.total %></td>
-          <td><%= link_to 'Show', charity %></td>
-          <td><%= link_to 'Edit', edit_charity_path(charity) %></td>
-          <td><%= link_to 'Destroy', charity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'View Details', charity %></td>
+          <td><%= link_to 'Edit Details', edit_charity_path(charity) %></td>
+          <td><%= link_to 'Delete', charity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     </tbody>
@@ -42,6 +42,6 @@
 
   <br>
 
-  <%= link_to 'New Charity', new_charity_path %>
+  <%= link_to 'Add New Charity', new_charity_path %>
   <% end %>
 </body>
