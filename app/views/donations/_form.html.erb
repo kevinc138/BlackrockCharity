@@ -11,15 +11,15 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :amount %><br>
-    <%= f.text_field :amount %>
+    <%= f.text_field :amount, :class => "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :charity %><br>
-    <%= f.collection_select :charity, Charity.all, :name,:name %>
+    <%= f.collection_select :charity, Charity.all, :name,:name, {prompt: "Select a charity"}, {class: "form-control"} %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :date %><br>
     <%= f.datetime_select :date %>
   </div>
